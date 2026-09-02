@@ -1,2 +1,2 @@
 # unzim
-Simple frontends 
+Simple zimdump frontents to decompress named files
