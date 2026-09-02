@@ -1,0 +1,23 @@
+
+#!/bin/bash
+
+NAME="unzim-list"
+
+function main(){
+	zimName="$1";
+	cd "${BASH_SOURCE%/*}";
+	if [ ! -f "$NAME" ]; then
+		printf "%s: could not find script directory\n" "$NAME";
+		return 1;
+	fi
+	if [ -z "$zimName" ]; then
+		printf "%s: no zim archive given\n" "$NAME";
+		return 2;
+	fi
+	zimdump list -- "$zimName";
+	return 0;
+}
+
+main "$@"
+exit $?
+
